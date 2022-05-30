@@ -21,9 +21,6 @@ orig_palettes.pickle - файл с оригинальными палитрами
 
 ## Установка (Docker)
 ```
-git clone https://gitlab.nanosemantics.ru/na/cv/digital-roads/externaldigitalroads.git
-cd externaldigitalroads/
-git checkout defectdetector
 docker build -t defectdetector .
 ```
 
