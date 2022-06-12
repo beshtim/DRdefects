@@ -34,6 +34,15 @@ class GraffitiProcessing:
         net.eval()
         return net
 
+    def create_onnx(self):
+        dummy_input = torch.randn(1, 3, 100, 100).to(self.device)
+        torch.onnx.export(self.net, 
+                  dummy_input,
+                  "weights/graffiti.onnx",
+                  verbose=False,
+                  export_params=True,
+                  )
+
     def image_process(self, image: np.ndarray, image_json):
         """Обработка картинки
 

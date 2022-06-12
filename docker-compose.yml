@@ -1,0 +1,22 @@
+version: '2.3'
+
+services:
+  defectdetector:
+    restart: "no"
+    container_name: defectdetector
+    mem_limit: 8G
+    build:
+      context: .
+      dockerfile: Dockerfile # Dockerfile.xavier
+    runtime: nvidia
+    environment:
+     - NVIDIA_VISIBLE_DEVICES=all
+     - USE_TRT=1
+    image: defectdetector:latest
+    volumes:
+      - path_to_images:/defectdetector/data/images
+      - path_to_jsons:/defectdetector/data/jsons
+      - path_to_weights:/defectdetector/weights
+      - path_to_output_folder:/defectdetector/data/output
+    network_mode: host
+    command: bash -c "python main.py"

@@ -4,5 +4,5 @@
     "discolor_threshold": 31.05,
     "reference_yaml_path": "data/reference.yaml",
     "surface_threshold": 13.7,
-    "graffiti_engine_path": "weights/GR_int8.trt"
+    "graffiti_engine_path": "weights/GR_fp16.trt"
 }

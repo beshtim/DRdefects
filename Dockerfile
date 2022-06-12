@@ -32,11 +32,10 @@ ENV PATH="/home/${USER}/.local/bin:${PATH}"
 
 # Install dependencies
 RUN pip install --user torch torchvision 
-RUN pip install --user opencv-python scipy colormath scikit-learn imutils PyYAML pandas pycuda
+RUN pip install --user opencv-python==4.5.5.64 scipy colormath scikit-learn imutils PyYAML pandas pycuda
 
 WORKDIR /defectdetector
 COPY . .
 
 ENV LANG C.UTF-8
 
-ENTRYPOINT [ "sudo", "python", "main.py" ] 
